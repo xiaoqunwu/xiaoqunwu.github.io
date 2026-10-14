@@ -127,11 +127,11 @@ body {
 }
 
 .avatar {
-    width: 100%;
+   width: 100%;
     height: 100%;
     border-radius: 50%;
     object-fit: cover;
-    object-position: center 30%;   /* 往上移，露出更多肩膀 */
+    object-position: center 10%;   /* 往上移，露出更多肩膀 */
     transform: scale(0.85);        /* 关键：整体缩小到 85% */
     transform-origin: center;      /* 缩放中心点 */
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
@@ -207,6 +207,43 @@ body {
     color: #555;
 }
 
+.student-list {
+    list-style: none;
+    padding: 0;
+    margin-bottom: 40px;
+}
+
+.student-list li {
+    display: grid;
+    grid-template-columns: 130px 120px 1fr;   /* 姓名列改成 130px */
+    gap: 20px;
+    padding: 12px 0;
+    border-bottom: 1px solid #eee;
+    font-size: 0.95rem;
+    line-height: 1.6;
+    align-items: baseline;
+}
+
+.student-list .name {
+    font-weight: 600;
+    color: #111;
+}
+
+.student-list .year {
+    color: #555;
+    font-variant-numeric: tabular-nums;
+}
+
+.student-list .note {
+    color: #333;
+}
+
+@media (max-width: 600px) {
+    .student-list li {
+        grid-template-columns: 1fr;
+        gap: 4px;
+    }
+}
 /* ========== 响应式设计 (手机端) ========== */
 @media (max-width: 768px) {
     body {
